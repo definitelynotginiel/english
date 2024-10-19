@@ -107,9 +107,7 @@ var styles = StyleSheet.create({
     shadowColor:'#000000',
     shadowRadius: 4,
     elevation: 6,
-    paddingLeft: 10,
-    paddingtop: 2,
-    paddingBottom: 2,
+    paddingLeft: 5,
     
     
   },
