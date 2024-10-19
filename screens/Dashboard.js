@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ImageBackground, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Dashboard() {
@@ -46,7 +46,18 @@ export default function Dashboard() {
                             <TouchableOpacity  style={styles.btn} onPress={() => navigation.navigate('Dashboard')}>
                                 <Image source={require('../assets/home btn.png')} style={styles.HomeIcon}/>
                             </TouchableOpacity>
-                            <TouchableOpacity  style={styles.btn} onPress={() => navigation.navigate('Login')}>
+                            <TouchableOpacity  style={styles.btn} 
+                            onPress={() => 
+                            Alert.alert('Are you sure you want to log out?','',[
+                                {
+                                    text: 'Cancel',
+                                    onPress: () => navigation.navigate('Dashboard'),
+                                },
+                                {
+                                    text: 'Yes',
+                                    onPress: () => navigation.navigate('Login'),
+                                }
+                            ])}>
                                 <Image source={require('../assets/log out.png')} style={styles.Icon}/>
                             </TouchableOpacity>
                         </View>

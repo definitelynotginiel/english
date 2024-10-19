@@ -94,9 +94,7 @@ var styles = StyleSheet.create({
     borderTopLeftRadius: 35,
     borderTopRightRadius: 35,
     backgroundColor: '#B6CCD8',
-    width: '90%',
-    marginLeft: '5%',
-    marginRight: '5%',
+    width: '100%',
     height: '45%',
     shadowColor: '#00000040',
     shadowOffset: { x: 0, y: -6 },
@@ -131,6 +129,7 @@ var styles = StyleSheet.create({
     paddingLeft: 5,
     paddingBottom: 5,
     paddingTop: 5,
+    fontFamily: 'FredokaOne-Regular',
   },
   loginform: {
     paddingTop: 40,
