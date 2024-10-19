@@ -10,12 +10,34 @@ export default function Dashboard() {
             <ImageBackground
                 source={require('../assets/bg image.png')}
                 style={styles.imageBackground}>
+                    <Image source={require('../assets/profile icon.png')} style={{position: 'absolute', right: 10, top: 20}}/>
                 <View  style={styles.titlebox}>
                     <Text style={styles.dashtitle}>TOPICS</Text>
                 </View>
            
                 {/* ( Content ) yung may radius sa left and right */}
                 <View  style={styles.Content}>
+                    <View style={styles.lessonsbox}>
+                        <View style={styles.lessons}>
+                            <Text style={styles.lessonstxt}>Figures of Speech</Text>
+                            </View>
+                            <View style={styles.lessons}>
+                            <Text style={styles.lessonstxt}>Parts of Speech</Text>
+                            </View>                           
+                    </View>
+                    <View style={styles.lessonsbox}>
+                        <View style={styles.lessons}>
+                            <Text style={styles.lessonstxt}>Types of Essay</Text>
+                            </View>
+                            <View style={styles.lessons}>
+                            <Text style={styles.lessonstxt}>Types of Sentences</Text>
+                            </View>   
+                    </View>
+                    <View style={styles.bottom}>
+                        <Text style={styles.lessonstxt}>Kinds of Grammar</Text>
+                    </View>
+                    
+
                     <View style={styles.ContentItems}>
                         <View  style={styles.Items}>
                             <TouchableOpacity  style={styles.btn} onPress={() => navigation.navigate('About')}>
@@ -51,26 +73,70 @@ var styles = StyleSheet.create({
         height: '18%',
         backgroundColor: 'transparent',
         position: 'absolute',
-        top: 50,
+        top: 100,
     },
     dashtitle:{
         position: 'absolute',  
         margin: 20, 
         fontSize: 60,
         color: '#ffffff',
-        fontFamily: 'sans-serif',
+        fontFamily: 'FredokaOne-Regular',
         textShadowColor: '#00000040',
         textShadowOffset: { width: 0, height: 9 },
         textShadowRadius: 6,
     },
+
     
     Content:{
         backgroundColor: '#B6CCD8',
         width: '100%',
-        height: '78%',
+        height: '72.5%',
         borderTopLeftRadius: 35,
         borderTopRightRadius: 35,
     },
+
+    lessonsbox:{
+        padding: 20,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    lessonstxt:{
+        fontFamily: 'FredokaOne-Regular',
+        fontSize: 15,
+        color: '#ffffff',
+    },
+    lessons:{
+        backgroundColor: '#445DAA',
+        width: 150,
+        height: 110,
+        padding: 10,
+        marginLeft: 15,
+        marginRight: 15,
+        marginBottom: -30,
+        marginTop: 20,
+        borderRadius: 7,
+        borderColor: 'black',
+        borderWidth: 1,
+        shadowColor:'#000000',
+        shadowRadius: 4,
+        elevation: 6,
+    },
+
+    bottom:{
+        backgroundColor: '#445DAA', 
+        width: 330, 
+        height: 110, 
+        padding: 10,
+        marginTop: 40, 
+        marginLeft: 15, 
+        borderRadius:7,    
+        borderColor: 'black',
+        borderWidth: 1,
+        shadowColor:'#000000',
+        shadowRadius: 4,
+        elevation: 6,
+        },
     // Eto yung mag hahandle ng mga figure of speech
     ContentItems:{
         width: '100%',
@@ -100,6 +166,6 @@ var styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#313D44',     
         padding: 20,
-        top: 540,
+        top: 62.5,
     }, 
 });

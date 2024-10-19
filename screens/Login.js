@@ -108,14 +108,14 @@ var styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 6,
     paddingLeft: 10,
-    paddingtop: 3,
-    paddingBottom: 3,
-    padding: 10,
+    paddingtop: 2,
+    paddingBottom: 2,
     
     
   },
   loginform: {
     paddingTop: 40,
+    marginBottom:10,
   },
   btn: {
     backgroundColor: '#313D44',
@@ -127,6 +127,7 @@ var styles = StyleSheet.create({
     marginRight: 100,
     borderRadius: 7, 
     marginBottom:5,
+    marginTop: 10,
     shadowColor:'#000000',
     shadowRadius: 4,
    shadowOffset: { width: 0, height: 6 },
