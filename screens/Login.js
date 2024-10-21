@@ -87,7 +87,7 @@ var styles = StyleSheet.create({
     color: '#ffffff',
     fontFamily: 'FredokaOne-Regular',
     textShadowColor: '#00000040',
-    textShadowOffset: { width: 0, height: -9 },
+    textShadowOffset: { width: 0, height: 9 },
     textShadowRadius: 6,
   },
   box: {

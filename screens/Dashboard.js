@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ImageBackground, Alert } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ImageBackground, Alert, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Dashboard() {
@@ -14,39 +14,50 @@ export default function Dashboard() {
                 <View  style={styles.titlebox}>
                     <Text style={styles.dashtitle}>TOPICS</Text>
                 </View>
-           
-                {/* ( Content ) yung may radius sa left and right */}
-                <View  style={styles.Content}>
+                
+                
+                <ScrollView flashScrollIndicators={false} style={styles.Content}>
                     <View style={styles.lessonsbox}>
-                        <View style={styles.lessons}>
-                            <Text style={styles.lessonstxt}>Figures of Speech</Text>
-                            </View>
-                            <View style={styles.lessons}>
-                            <Text style={styles.lessonstxt}>Parts of Speech</Text>
-                            </View>                           
+                            
+                            <Image source={require('../assets/FOS.png')} style={styles.lessonspic}/>
+                            
+                            
+                            <Image source={require('../assets/POS.png')}style={styles.lessonspic}/>
+                        
+                                                     
                     </View>
                     <View style={styles.lessonsbox}>
-                        <View style={styles.lessons}>
-                            <Text style={styles.lessonstxt}>Types of Essay</Text>
-                            </View>
-                            <View style={styles.lessons}>
-                            <Text style={styles.lessonstxt}>Types of Sentences</Text>
-                            </View>   
+                           
+                            <Image source={require('../assets/TOE.png')}style={styles.lessonspic}/>                           
+                            <Image source={require('../assets/TOS.png')}style={styles.lessonspic}/>                            
                     </View>
                     <View style={styles.bottom}>
-                        <Text style={styles.lessonstxt}>Kinds of Grammar</Text>
+                        <Image source={require('../assets/KOGr.png')} style={{position: 'absolute', right: -7, top: 3}}/>
+                        <Text style={[styles.lessonstxt, {marginTop: -0}]}>Kinds of Grammar</Text>
                     </View>
+                    <View style={styles.space}></View>
+                   
+                                    </ScrollView>
+                                    <View style={{position: 'absolute', top: 210, backgroundColor: '#445DAA',
+        width: '100%',
+        height: '4%',}}></View>
+                                    <View style={{position: 'absolute', top: 210, backgroundColor: '#B6CCD8',
+        width: '100%',
+        height: '4%',
+        borderTopLeftRadius: 35,
+        borderTopRightRadius: 35,}}>
                     
+                </View>
 
-                    <View style={styles.ContentItems}>
+                      <View style={styles.ContentItems}>
                         <View  style={styles.Items}>
-                            <TouchableOpacity  style={styles.btn} onPress={() => navigation.navigate('About')}>
+                            <TouchableOpacity  onPress={() => navigation.navigate('About')}>
                                 <Image source={require('../assets/about us.png')} style={styles.Icon}/>
                             </TouchableOpacity>
-                            <TouchableOpacity  style={styles.btn} onPress={() => navigation.navigate('Dashboard')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
                                 <Image source={require('../assets/home btn.png')} style={styles.HomeIcon}/>
                             </TouchableOpacity>
-                            <TouchableOpacity  style={styles.btn} 
+                            <TouchableOpacity
                             onPress={() => 
                             Alert.alert('Are you sure you want to log out?','',[
                                 {
@@ -58,11 +69,11 @@ export default function Dashboard() {
                                     onPress: () => navigation.navigate('Login'),
                                 }
                             ])}>
-                                <Image source={require('../assets/log out.png')} style={styles.Icon}/>
+                                <Image source={require('../assets/logout.png')} style={styles.Icon}/>
                             </TouchableOpacity>
                         </View>
                     </View>
-                </View>            
+            
             </ImageBackground>
 <StatusBar style="auto" />
         </View>
@@ -95,27 +106,37 @@ var styles = StyleSheet.create({
         textShadowColor: '#00000040',
         textShadowOffset: { width: 0, height: 9 },
         textShadowRadius: 6,
-    },
-
-    
+    },  
     Content:{
         backgroundColor: '#B6CCD8',
         width: '100%',
         height: '72.5%',
         borderTopLeftRadius: 35,
         borderTopRightRadius: 35,
+        position: 'absolute',
     },
-
     lessonsbox:{
-        padding: 20,
+        padding: 10,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        
     },
     lessonstxt:{
         fontFamily: 'FredokaOne-Regular',
-        fontSize: 15,
+        fontSize: 30,
         color: '#ffffff',
+        textShadowColor: '#00000040',
+        textShadowOffset: { width: 0, height: 6 },
+        textShadowRadius: 6,
+    },
+    lessonspic:{
+        width: 160,
+        height: 160,
+        marginBottom: -30,
+        marginLeft: 5,
+        marginRight: 5,
+        marginTop: 20,
     },
     lessons:{
         backgroundColor: '#445DAA',
@@ -133,13 +154,13 @@ var styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 6,
     },
-
     bottom:{
         backgroundColor: '#445DAA', 
         width: 330, 
-        height: 110, 
-        padding: 10,
-        marginTop: 40, 
+        height: 150, 
+        paddingLeft: 10,
+        paddingTop: 10,
+        marginTop: 30, 
         marginLeft: 15, 
         borderRadius:7,    
         borderColor: 'black',
@@ -148,25 +169,24 @@ var styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 6,
         },
-    // Eto yung mag hahandle ng mga figure of speech
     ContentItems:{
         width: '100%',
         height: '100%',
-
+        position: 'absolute',
+        top: 625,
     },
-
     HomeIcon:{
         width: 72,
         height: 89,
         marginBottom: 70,
-
     },
     Icon:{
         width: 60,
         height: 70,
         marginBottom: 80,
+        marginLeft: 10,
+        marginRight: 10,
     },
-    // Eto yung nag hahandle nung tatlong clickable
     Items:{
         width: '100%',
         height: '17.5%',
@@ -179,4 +199,7 @@ var styles = StyleSheet.create({
         padding: 20,
         top: 62.5,
     }, 
+    space:{
+        height: 110,
+    },
 });
