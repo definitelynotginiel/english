@@ -6,76 +6,65 @@ export default function Dashboard() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            
-            <ImageBackground
-                source={require('../assets/bg image.png')}
+            <ImageBackground source={require('../assets/bg image.png')}
                 style={styles.imageBackground}>
-                    <Image source={require('../assets/profile icon.png')} style={{position: 'absolute', right: 10, top: 20}}/>
+                <Image source={require('../assets/profile icon.png')} style={{position: 'absolute', right: 10, top: 20}}/>
                 <View  style={styles.titlebox}>
                     <Text style={styles.dashtitle}>TOPICS</Text>
-                </View>
-                
-                
+                </View>              
                 <ScrollView flashScrollIndicators={false} style={styles.Content}>
                     <View style={styles.lessonsbox}>
-                            
-                            <Image source={require('../assets/FOS.png')} style={styles.lessonspic}/>
-                            
-                            
+                            <TouchableOpacity onPress={() => navigation.navigate('FiguresofSpeech')}>
+                            <Image  source={require('../assets/FOS.png')} style={styles.lessonspic}/>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('PartsofSpeech')}>
                             <Image source={require('../assets/POS.png')}style={styles.lessonspic}/>
-                        
-                                                     
+                            </TouchableOpacity>                                                    
                     </View>
                     <View style={styles.lessonsbox}>
-                           
+                            <TouchableOpacity onPress={() => navigation.navigate('TypesofEssay')}>
                             <Image source={require('../assets/TOE.png')}style={styles.lessonspic}/>                           
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('TypesofSentences')}>
                             <Image source={require('../assets/TOS.png')}style={styles.lessonspic}/>                            
+                            </TouchableOpacity>
                     </View>
-                    <View style={styles.bottom}>
+                    <TouchableOpacity onPress={() => navigation.navigate('KindsofGrammar')} style={styles.bottom}>
                         <Image source={require('../assets/KOGr.png')} style={{position: 'absolute', right: -7, top: 3}}/>
                         <Text style={[styles.lessonstxt, {marginTop: -0}]}>Kinds of Grammar</Text>
+                    </TouchableOpacity>
+                    <View style={styles.space}></View>            
+                </ScrollView>
+                    <View style={{position: 'absolute', top: 210, backgroundColor: '#445DAA', width: '100%', height: '4%',}}>
                     </View>
-                    <View style={styles.space}></View>
-                   
-                                    </ScrollView>
-                                    <View style={{position: 'absolute', top: 210, backgroundColor: '#445DAA',
-        width: '100%',
-        height: '4%',}}></View>
-                                    <View style={{position: 'absolute', top: 210, backgroundColor: '#B6CCD8',
-        width: '100%',
-        height: '4%',
-        borderTopLeftRadius: 35,
-        borderTopRightRadius: 35,}}>
-                    
-                </View>
-
-                      <View style={styles.ContentItems}>
-                        <View  style={styles.Items}>
-                            <TouchableOpacity  onPress={() => navigation.navigate('About')}>
-                                <Image source={require('../assets/about us.png')} style={styles.Icon}/>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-                                <Image source={require('../assets/home btn.png')} style={styles.HomeIcon}/>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                            onPress={() => 
-                            Alert.alert('Are you sure you want to log out?','',[
-                                {
-                                    text: 'Cancel',
-                                    onPress: () => navigation.navigate('Dashboard'),
-                                },
-                                {
-                                    text: 'Yes',
-                                    onPress: () => navigation.navigate('Login'),
-                                }
-                            ])}>
-                                <Image source={require('../assets/logout.png')} style={styles.Icon}/>
-                            </TouchableOpacity>
-                        </View>
+                    <View style={{position: 'absolute', top: 210, backgroundColor: '#B6CCD8', width: '100%', height: '4%', borderTopLeftRadius: 35, borderTopRightRadius: 35,}}>                 
                     </View>
-            
+                <View style={styles.ContentItems}>
+                    <View  style={styles.Items}>
+                        <TouchableOpacity  onPress={() => navigation.navigate('About')}>
+                            <Image source={require('../assets/about us.png')} style={styles.Icon}/>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+                            <Image source={require('../assets/home btn.png')} style={styles.HomeIcon}/>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                        onPress={() => 
+                        Alert.alert('Are you sure you want to log out?','',[
+                            {
+                                text: 'Cancel',
+                                onPress: () => navigation.navigate('Dashboard'),
+                            },
+                            {
+                                text: 'Yes',
+                                onPress: () => navigation.navigate('Login'),
+                            }
+                        ])}>
+                        <Image source={require('../assets/logout.png')} style={styles.Icon}/>
+                        </TouchableOpacity>
+                    </View>
+                </View>           
             </ImageBackground>
-<StatusBar style="auto" />
+            <StatusBar style="auto" />
         </View>
     );
 }
@@ -173,17 +162,17 @@ var styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         position: 'absolute',
-        top: 625,
+        top: 637,
     },
     HomeIcon:{
         width: 72,
         height: 89,
-        marginBottom: 70,
+        marginBottom: 91,
     },
     Icon:{
         width: 60,
         height: 70,
-        marginBottom: 80,
+        marginBottom: 100,
         marginLeft: 10,
         marginRight: 10,
     },

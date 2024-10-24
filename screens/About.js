@@ -7,12 +7,11 @@ export default function Dashboard() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>      
-            <ImageBackground
-                source={require('../assets/bg image.png')}
+            <ImageBackground source={require('../assets/bg image.png')}
                 style={styles.imageBackground}>
-                    <View style={styles.fixedHeader}>
-                    <Text style={styles.header}>ABOUT US!</Text>
-                    </View>
+                <View style={styles.fixedHeader}>
+                <Text style={styles.header}>ABOUT US!</Text>
+                </View>
                     <ScrollView style={styles.scroll} flashScrollIndicators={true} >
                         <Image style={{marginTop: 12.5}}source={require('../assets/UI.png')} />
                         <Image source={require('../assets/UX.png')} />
@@ -22,8 +21,7 @@ export default function Dashboard() {
                         <Image source={require('../assets/TYPOGRAPHY.png')} />
                         <Image source={require('../assets/SPACING.png')} />
                         <View style={styles.space}></View>
-                        
-                        </ScrollView>
+                    </ScrollView>
                     <View style={styles.ContentItems}>
                         <View  style={styles.Items}>
                             <TouchableOpacity  style={styles.btn} onPress={() => navigation.navigate('About')}>
@@ -36,7 +34,7 @@ export default function Dashboard() {
                             Alert.alert('Are you sure you want to log out?','',[
                                 {
                                     text: 'Cancel',
-                                    onPress: () => navigation.navigate('Dashboard'),
+                                    onPress: () => navigation.navigate('About'),
                                 },
                                 {
                                     text: 'Yes',
@@ -46,8 +44,8 @@ export default function Dashboard() {
                             <Image source={require('../assets/logout.png')} style={styles.Icon}/>      
                             </TouchableOpacity>
                         </View>
-                </View> 
-                </ImageBackground>
+                    </View> 
+            </ImageBackground>
             <StatusBar style="auto" />
         </View>
     );

@@ -9,13 +9,13 @@ export default function Login({ navigation }) {
     'FredokaOne-Regular': require('../assets/fonts/FredokaOne-Regular.ttf'),
     'Inter': require('../assets/fonts/Inter.ttf'),
   });
-  
-  const [password, setPassword] = useState('');
-  const [hidePassword, setHidePassword] = useState(true); // Toggle state for password visibility
 
   if (!loaded) {
     return null;
   }
+
+  const [password, setPassword] = useState('');
+  const [hidePassword, setHidePassword] = useState(true); 
 
   return (
     <View style={styles.container}>
@@ -36,9 +36,7 @@ export default function Login({ navigation }) {
           <View style={styles.loginform}>
             <Text style={styles.text}>Username</Text>
             <TextInput style={styles.textinput} />
-
             <Image source={require('../assets/human icon.png')} style={{ position: 'absolute', right: 65, top: 77 }} />
-
             <Text style={styles.text}>Password</Text>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <TextInput
@@ -57,7 +55,6 @@ export default function Login({ navigation }) {
                 />
               </TouchableOpacity>
             </View>
-
             <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Dashboard')}>
               <Text style={styles.btntxt}>Login</Text>
             </TouchableOpacity>
