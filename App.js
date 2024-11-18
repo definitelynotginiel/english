@@ -10,8 +10,6 @@ import KindsofGrammar from './screens/KindsofGrammar';
 import TypesofEssay from './screens/TypesofEssay';
 import TypesofSentences from './screens/TypesofSentences';
 
-
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {

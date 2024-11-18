@@ -13,8 +13,7 @@ export default function FiguresofSpeech() {
                     <Image source={require('../assets/profile icon.png')} style={{position: 'absolute', right: 10, top: 20}}/>
                 <View  style={styles.titlebox}>
                     <Text style={styles.dashtitle}>Figures of Speech</Text>
-                </View>
-                
+                </View>              
                 <View style={styles.Content}>
                     <View style={styles.lessonsbox}>  
                         <View style={styles.lessons}>
@@ -26,11 +25,8 @@ export default function FiguresofSpeech() {
                             </View>
                             <View style={styles.lessons}>
                             <Text style={styles.lesstitle}>III. The Importance of Figures of Speech</Text>
-
                             </View>    
-                    </View>
-                    
-                   
+                    </View>                   
                  </View>
 
                       <View style={styles.ContentItems}>
@@ -56,8 +52,7 @@ export default function FiguresofSpeech() {
                                 <Image source={require('../assets/logout.png')} style={styles.Icon}/>
                             </TouchableOpacity>
                         </View>
-                    </View>
-            
+                    </View>      
             </ImageBackground>
 <StatusBar style="auto" />
         </View>
